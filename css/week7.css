@@ -22,14 +22,14 @@ nav a{
 }
 
 @keyframes cat {
-    0% {width:30vw}
-    50% {width:60vw}
-    100% {width:30vw}
+    0% {width:15vw}
+    50% {width:100vw}
+    100% {width:15vw}
 }
 
 
 img{
-    width:30vw;
+    width:15vw;
     height: 30vh;
 
 }
