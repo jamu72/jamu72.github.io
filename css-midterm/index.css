@@ -1,0 +1,36 @@
+body{
+    background-color: #5B5B5B;
+}
+p, h3{
+    color: white;
+    text-align: center;
+}
+
+#SymphonyTitle{
+    color: white;
+    text-align: center;
+}
+
+div.container {
+    text-align: center;
+  }
+  
+  ul.myUL {
+    display: inline-block;
+    text-align: left;
+    color: white;
+  }
+
+  /* .wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 10px; 
+  }
+
+  .grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+  } */
