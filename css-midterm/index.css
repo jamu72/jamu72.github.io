@@ -1,14 +1,27 @@
 body{
-    background-color: #5B5B5B;
+    background-color: #809848;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 p, h3{
-    color: white;
+    color: black;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3{
+  font-size: 20px;
+  color: #672C2C;
+}
+
+.Begining{
+  font-size: 20px;
 }
 
 #SymphonyTitle{
-    color: white;
+    color: #672C2C;
     text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 div.container {
@@ -18,14 +31,16 @@ div.container {
   ul.myUL {
     display: inline-block;
     text-align: left;
-    color: white;
   }
 
-  /* .wrapper{
+.time{
+  color:#193D56;
+}
+
+  .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr; 
-    gap: 10px; 
+    grid-template-columns: repeat(2, 1fr); /* 3 columns with equal width */
+    grid-gap: 5%; /* spacing between grid items */
   }
 
   .grid-item {
@@ -33,4 +48,20 @@ div.container {
     justify-content: center;
     align-items: center;
     font-size: 24px;
-  } */
+  } 
+
+  @media screen and (max-width: 600px) {
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr); /* 3 columns with equal width */
+      grid-gap: 20px; /* spacing between grid items */
+    }
+  
+    .grid-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      border: 10px white;
+    } 
+  }
