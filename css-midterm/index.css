@@ -53,6 +53,13 @@ color:#193D56;
   font-size: 24px;
 } 
 
+.artists p{
+  color:#193D56;
+}
+
+.rep p{
+  color:#5B004A;
+}
 @media screen and (max-width: 600px) {
   .wrapper {
     display: grid;
