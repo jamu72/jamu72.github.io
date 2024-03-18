@@ -42,7 +42,7 @@ color:#193D56;
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+  grid-template-columns: repeat(2, 1fr); /* 3 columns with equal width */
   grid-gap: 5%; /* spacing between grid items */
 }
 
