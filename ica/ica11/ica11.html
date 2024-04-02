@@ -64,10 +64,10 @@
 
         if (msgType === "warning") {
             msg.style.backgroundImage = "url(icons/warning.png)";
-            panel.style.backgroundColor = "red";
+            panel.style.backgroundColor = "purple";
         } else if (msgType === "chat") {
             msg.style.backgroundImage = "url(icons/chat.png)";
-            panel.style.backgroundColor = "aqua";
+            panel.style.backgroundColor = "green";
         } else {
             msg.style.paddingLeft = "20px";
         }
@@ -80,7 +80,12 @@
         return(text);
       }
 
-      btn.addEventListener("click", () => displayMessage(userInput(), "warning"),
+      function warnOrChat(){
+        let text = prompt("Warning or chat?");
+        return(text);
+      };
+
+      btn.addEventListener("click", () => displayMessage(userInput(), warnOrChat()),
         );
     //   const btn = document.querySelector("button");
     //   btn.addEventListener("click", displayMessage);
