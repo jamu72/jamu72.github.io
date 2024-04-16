@@ -2,7 +2,7 @@ const endpoint = 'https://dog.ceo/api/breeds/image/random';
 const btn = document.querySelector("#js-new-quote");
 const answerBtn = document.querySelector('#js-tweet');
 const picture = document.querySelector('#picture')
-answerBtn.addEventListener("click", getAnswer);
+answerBtn.addEventListener("click", replacePicture);
 btn.addEventListener("click", getPicture);
 
 let answer = '';
@@ -37,8 +37,8 @@ function displayQuote(quote){
     quoteText.textContent = quote;
 }
 
-function getAnswer(){
-    answerTxt.textContent = answer;
-    console.log("Hello in answer");
+function replacePicture(){
+    picture.src=("huhCat.jpg");
+    
 }
 
