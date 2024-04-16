@@ -39,11 +39,34 @@
     .then(text => displayCatInfo(text))
 
     function displayCatInfo(catString) {
-      let total = 0;
+      
+        let total = 0;
       let male = 0;
-
+        const parsed = JSON.parse(catString);
+        console.log(parsed);
+        var count = 0;
+        const length = parsed.length;
+        for(var i = 0; i < length; i++){
+            console.log(parsed[i].name);
+            if(i===length-1){
+                motherInfo = motherInfo + "and " + parsed[i].name;
+            }else{
+                motherInfo = motherInfo + parsed[i].name +", ";
+            }
+            const kittenLength = parsed[i].kittens.length;
+            total = total + kittenLength;
+            for(var j = 0; j < kittenLength; j++){
+                if(parsed[i].kittens[j].gender==='m'){
+                    male = male + 1;
+                }
+            }
+        }
+        console.log(motherInfo);
+        console.log("Total is " + total);
+        console.log("Males are " + male);
+        var female = total - male;
+        kittenInfo = "The total number of kittens is " + total + " and the number of males was " + male + " and the total number of females is " + female;
       // Add your code here
-        console.log(catString);
       // Don't edit the code below here!
 
       para1.textContent = motherInfo;
