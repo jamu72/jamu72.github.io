@@ -100,8 +100,9 @@ function updateGreenGnome(){
     greenGnomeObject.gotClicked();
     greenGnome.style.left = greenGnomeObject.x+"px";
     greenGnome.style.top = greenGnomeObject.y+"px";
+    currentVol = 0;
     console.log("Entered Green Gnome");
-    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
 }
 
 function redGnomeClicked(){
@@ -115,7 +116,7 @@ function blueGnomeClicked(){
 }
 
 function infoButtonClicked(){
-    alert("Touch the blue gnome to lower volume, touch the red gnome of increase volume");
+    alert("Touch the blue gnome to lower volume, touch the red gnome of increase volume. Green gnome will set volume to 0. Click on green gnome for a surprise");
 }
 
 function greenGnomeClicked(){
