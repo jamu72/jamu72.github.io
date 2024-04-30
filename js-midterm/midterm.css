@@ -1,0 +1,12 @@
+img {
+    height: 5%;
+    width: 5%;
+    position:absolute;
+}
+
+p{
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
