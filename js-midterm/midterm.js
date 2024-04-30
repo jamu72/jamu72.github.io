@@ -1,7 +1,7 @@
 const redGnome = document.body.querySelector("#redGnome");
 const blueGnome = document.body.querySelector("#blueGnome");
 const greenGnome = document.body.querySelector("#greenGnome");
-const volume = document.body.querySelector("p");
+const volume = document.body.querySelector("#volume");
 const canvas = document.querySelector("canvas");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
