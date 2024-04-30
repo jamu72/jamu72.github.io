@@ -1,5 +1,6 @@
 const redGnome = document.body.querySelector("#redGnome");
 const blueGnome = document.body.querySelector("#blueGnome");
+const greenGnome = document.body.querySelector("#greenGnome");
 const volume = document.body.querySelector("p");
 const canvas = document.querySelector("canvas");
 const width = (canvas.width = window.innerWidth);
@@ -61,6 +62,9 @@ redGnome.style.top = redGnomeObject.y+"px";
 const blueGnomeObject = new Gnome(-2, 400, 400, 2, 1.5);
 blueGnome.style.left = blueGnomeObject.x+"px";
 blueGnome.style.top = blueGnomeObject.y+"px";
+const greenGnomeObject = new Gnome(0, 250, 250, -2, 1.5);
+greenGnome.style.left = greenGnomeObject.x+"px";
+greenGnome.style.top = greenGnomeObject.y+"px";
 
 function updateRedGnome(){
     console.log("Before Red Update");
@@ -92,6 +96,14 @@ function updateBlueGnome(){
     console.log(blueGnome.style.top);
 }
 
+function updateGreenGnome(){
+    greenGnomeObject.gotClicked();
+    greenGnome.style.left = greenGnomeObject.x+"px";
+    greenGnome.style.top = greenGnomeObject.y+"px";
+    console.log("Entered Green Gnome");
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+}
+
 function redGnomeClicked(){
     console.log("RED Gnome Clicked");
     requestAnimationFrame(updateRedGnome);
@@ -106,8 +118,13 @@ function infoButtonClicked(){
     alert("Touch the blue gnome to lower volume, touch the red gnome of increase volume");
 }
 
+function greenGnomeClicked(){
+    updateGreenGnome();
+}
+
 redGnome.addEventListener('mouseenter', redGnomeClicked);
 blueGnome.addEventListener('mouseenter', blueGnomeClicked);
+greenGnome.addEventListener('mouseenter', greenGnomeClicked);
 
 info.addEventListener('click', infoButtonClicked);
 
@@ -118,6 +135,9 @@ function loop(){
     blueGnomeObject.update();
     blueGnome.style.left = blueGnomeObject.x+"px";
     blueGnome.style.top = blueGnomeObject.y+"px";
+    greenGnomeObject.update();
+    greenGnome.style.left = greenGnomeObject.x+"px";
+    greenGnome.style.top = greenGnomeObject.y+"px";
     requestAnimationFrame(loop);
 }
 
