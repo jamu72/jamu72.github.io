@@ -116,7 +116,7 @@ function blueGnomeClicked(){
 }
 
 function infoButtonClicked(){
-    alert("Touch the blue gnome to lower volume, touch the red gnome of increase volume. Green gnome will set volume to 0. Click on green gnome for a surprise");
+    alert("Touch the blue gnome to lower volume, touch the red gnome of increase volume. Green gnome will set volume to 0. Also avoid the green gnome or else a surprise");
 }
 
 function greenGnomeClicked(){
