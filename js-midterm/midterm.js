@@ -1,7 +1,7 @@
 const redGnome = document.body.querySelector("#redGnome");
 const blueGnome = document.body.querySelector("#blueGnome");
 const greenGnome = document.body.querySelector("#greenGnome");
-const volume = document.body.querySelector("#volume");
+const volumeText = document.body.querySelector("#volume");
 const canvas = document.querySelector("canvas");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
@@ -42,8 +42,8 @@ class Gnome{
     randomNewPosition(){
         this.x = random(0, width);
         this.y = random(0, height);
-        this.velX = random(-3, 3);
-        this.velY = random(-3, 3);
+        this.velX = random(-5, 5);
+        this.velY = random(-5, 5);
     }
 
     gotClicked(){
@@ -52,7 +52,7 @@ class Gnome{
         if(currentVol + this.volume <= 100 && currentVol + this.volume >= 0){
             currentVol += this.volume;
         }
-        volume.innerHTML = "Volume: " + currentVol;
+        volumeText.innerHTML = "Volume: " + currentVol;
     }
 }
 
