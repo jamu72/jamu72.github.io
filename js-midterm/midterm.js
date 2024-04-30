@@ -103,11 +103,12 @@ function blueGnomeClicked(){
 }
 
 function infoButtonClicked(){
-    alert("Click the blue gnome to lower volume, click the red gnome of increase volume");
+    alert("Touch the blue gnome to lower volume, touch the red gnome of increase volume");
 }
 
-redGnome.addEventListener('click', redGnomeClicked);
-blueGnome.addEventListener('click', blueGnomeClicked);
+redGnome.addEventListener('mouseenter', redGnomeClicked);
+blueGnome.addEventListener('mouseenter', blueGnomeClicked);
+
 info.addEventListener('click', infoButtonClicked);
 
 function loop(){
