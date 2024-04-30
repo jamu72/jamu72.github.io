@@ -5,6 +5,8 @@ const canvas = document.querySelector("canvas");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
+const info = document.body.querySelector("#infoButton");
+
 var currentVol = 0;
 
 function random(min, max) {
@@ -39,8 +41,8 @@ class Gnome{
     randomNewPosition(){
         this.x = random(0, width);
         this.y = random(0, height);
-        this.velX = random(-5, 5);
-        this.velY = random(-5, 5);
+        this.velX = random(-3, 3);
+        this.velY = random(-3, 3);
     }
 
     gotClicked(){
@@ -100,8 +102,13 @@ function blueGnomeClicked(){
     requestAnimationFrame(updateBlueGnome);
 }
 
+function infoButtonClicked(){
+    alert("Click the blue gnome to lower volume, click the red gnome of increase volume");
+}
+
 redGnome.addEventListener('click', redGnomeClicked);
 blueGnome.addEventListener('click', blueGnomeClicked);
+info.addEventListener('click', infoButtonClicked);
 
 function loop(){
     redGnomeObject.update();

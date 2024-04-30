@@ -1,6 +1,6 @@
 img {
-    height: 5%;
-    width: 5%;
+    height: 10%;
+    width: 10%;
     position:absolute;
 }
 
@@ -9,4 +9,11 @@ p{
     position: absolute;
     top: 50%;
     left: 50%;
+}
+
+#infoButton{
+    height: 5%;
+    width: 5%;
+    right: 0%;
+
 }
