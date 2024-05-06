@@ -7,6 +7,9 @@ img {
 p{
     font-size: 30px;
     text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
 }
 
 #infoButton{
@@ -14,4 +17,12 @@ p{
     width: 5%;
     right: 0%;
 
+}
+
+body{   
+    background-image: url(./village.webp);
+}
+
+#volume{
+    font-size: 60px;
 }

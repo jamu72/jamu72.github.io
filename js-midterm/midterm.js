@@ -6,30 +6,34 @@ const canvas = document.querySelector("canvas");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
-const info = document.body.querySelector("#infoButton");
 
-var currentVol = 0;
+var currentVol = random(25,75);
+        volumeText.innerHTML = "Volume: " + currentVol;
+
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 class Gnome{
-    constructor(volume, x,y, velX, velY){
+    constructor(volume, x,y, velX, velY, heightInput, widthInput){
         this.volume = volume
         this.x = x;
         this.y = y;
         this.velX = velX;
         this.velY = velY;
+        this.height = heightInput;
+        this.width = widthInput;
+        console.log(width + " " + height);
     }
 
     update(){
-        if(this.x+this.velX >= width || this.x+this.velX <= 0){
+        if(this.x+this.velX +this.width >= width || this.x+this.velX <= 0){
             this.velX = -(this.velX);
             console.log("Switching x direction");
         }
     
-        if(this.y + this.velY >= height || this.y+this.velY <= 0){
+        if(this.y + this.velY+this.height >= height || this.y+this.velY <= 0){
             this.velY = -(this.velY);
             console.log("Switching y direction");
         }
@@ -56,13 +60,13 @@ class Gnome{
     }
 }
 
-const redGnomeObject = new Gnome(2, 100, 100, 1, 1);
+const redGnomeObject = new Gnome(2, 100, 100, 1, 1, redGnome.height, redGnome.width);
 redGnome.style.left = redGnomeObject.x+"px";
 redGnome.style.top = redGnomeObject.y+"px";
-const blueGnomeObject = new Gnome(-2, 400, 400, 2, 1.5);
+const blueGnomeObject = new Gnome(-2, 400, 400, 2, 1.5, blueGnome.height, blueGnome.width);
 blueGnome.style.left = blueGnomeObject.x+"px";
 blueGnome.style.top = blueGnomeObject.y+"px";
-const greenGnomeObject = new Gnome(0, 250, 250, -2, 1.5);
+const greenGnomeObject = new Gnome(0, 250, 250, -2, 1.5, greenGnome.height, greenGnome.width);
 greenGnome.style.left = greenGnomeObject.x+"px";
 greenGnome.style.top = greenGnomeObject.y+"px";
 
@@ -100,9 +104,9 @@ function updateGreenGnome(){
     greenGnomeObject.gotClicked();
     greenGnome.style.left = greenGnomeObject.x+"px";
     greenGnome.style.top = greenGnomeObject.y+"px";
-    currentVol = 0;
+    currentVol = random(0,100);
     console.log("Entered Green Gnome");
-    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+    window.open("./gnomeMeme.webp", "_blank");
 }
 
 function redGnomeClicked(){
@@ -115,9 +119,6 @@ function blueGnomeClicked(){
     requestAnimationFrame(updateBlueGnome);
 }
 
-function infoButtonClicked(){
-    alert("Touch the blue gnome to lower volume, touch the red gnome of increase volume. Green gnome will set volume to 0. Also avoid the green gnome or else a surprise");
-}
 
 function greenGnomeClicked(){
     updateGreenGnome();
@@ -127,7 +128,6 @@ redGnome.addEventListener('mouseenter', redGnomeClicked);
 blueGnome.addEventListener('mouseenter', blueGnomeClicked);
 greenGnome.addEventListener('mouseenter', greenGnomeClicked);
 
-info.addEventListener('click', infoButtonClicked);
 
 function loop(){
     redGnomeObject.update();
